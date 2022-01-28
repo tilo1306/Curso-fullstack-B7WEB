@@ -4,11 +4,11 @@ Repositório com exercícios e projetos do meu aprendizado cursando os cursos da
 <div>
 <h2 align="center">HTML e CSS</h2>
   <h3 align="center">Projeto site com flexbox e HTML semântico</h3>
-  <img align="center" alt="site" src="./HTML-CSS/Projeto-Site-com-Flexbox-e-HTML-Semântico/assets/images/site.gif">
+  <img align="center" alt="site" src="./HTML-CSS/gif/site.gif">
 </div> 
 <div>
   <h3 align="center">Projeto Starbucks</h3>
-  <img align="center" alt="Starbucks" src="./HTML-CSS/Starbucks/assets/images/starbuck.gif"> 
+  <img align="center" alt="Starbucks" src="./HTML-CSS/gif/starbuck.gif"> 
 </div>
 ## :rocket: Tecnologias
 
