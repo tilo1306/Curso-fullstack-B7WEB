@@ -1,5 +1,5 @@
 {
-  "name": "lidando-com-loading",
+  "name": "lendo-informa-es-do-jsonplaceholder",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
