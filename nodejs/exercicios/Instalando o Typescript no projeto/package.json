@@ -1,14 +1,12 @@
 {
-  "name": "exercicios-1",
+  "name": "instalando-o-typescript-no-projeto",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/node": "^17.0.16"
-  }
+  "license": "ISC"
 }
