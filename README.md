@@ -10,6 +10,10 @@ Repositório com exercícios e projetos do meu aprendizado cursando os cursos da
   <h3 align="center">Projeto Starbucks</h3>
   <img align="center" alt="Starbucks" src="./HTML-CSS/gif/starbuck.gif"> 
 </div>
+<div>
+  <h3 align="center">Projeto Calculadora de IMC em Reactjs+TypeScript</h3>
+  <img align="center" alt="Starbucks" src="./Reactjs+TypeScript/Projeto/calculadora-imc/src/assets/gif/video.gif"> 
+</div>
 ## :rocket: Tecnologias
 
 - ![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
