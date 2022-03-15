@@ -6,7 +6,7 @@ Repositório com exercícios e projetos do meu aprendizado cursando os cursos da
   <h3 align="center">Projeto site com flexbox e HTML semântico</h3>
   <img align="center" alt="Starbucks" src="./HTML-CSS/gif/site.gif"> 
 </div>
-<div>
+<div>-
   <h3 align="center">Projeto Starbucks</h3>
   <img align="center" alt="Starbucks" src="./HTML-CSS/gif/starbuck.gif"> 
 </div>
@@ -14,6 +14,11 @@ Repositório com exercícios e projetos do meu aprendizado cursando os cursos da
   <h3 align="center">Projeto Calculadora de IMC em Reactjs+TypeScript</h3>
   <img align="center" alt="Starbucks" src="./Reactjs+TypeScript/Projeto/calculadora-imc/src/assets/gif/video.gif"> 
 </div>
+<div>
+  <h3 align="center">Projeto Album de fotos em Reactjs+TypeScript</h3>
+  <img align="center" alt="Starbucks" src="./Reactjs+TypeScript/Projeto/album-jsonPlaceholder/src/gif/video.gif"> 
+</div>
+
 ## :rocket: Tecnologias
 
 - ![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -21,6 +26,10 @@ Repositório com exercícios e projetos do meu aprendizado cursando os cursos da
 - ![image](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
   >
 - ![image](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+  >
+- ![image](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+  >
+- ![image](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
   >
 
 ## Contato
