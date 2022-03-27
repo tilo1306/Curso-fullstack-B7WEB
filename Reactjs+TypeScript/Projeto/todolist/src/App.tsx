@@ -46,7 +46,7 @@ const App = () => {
   return (
     <C.Container>
       <C.Area>
-        <C.Header>Todo-list</C.Header>
+        <C.Header>Todo-List</C.Header>
 
         <AddArea onEnter={handleAddTask} />
 
