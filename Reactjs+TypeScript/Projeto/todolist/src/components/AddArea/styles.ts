@@ -8,8 +8,8 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
 
-  .image {
-    margin-right: 5px;
+  .imagem {
+    margin-right: 8px;
   }
   input {
     border: 0;
