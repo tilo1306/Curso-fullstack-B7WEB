@@ -4,7 +4,7 @@ Repositório com exercícios e projetos do meu aprendizado cursando os cursos da
 <div>
 <h2 align="center">HTML e CSS</h2>
   <h3 align="center">Projeto site com flexbox e HTML semântico</h3>
-  <img align="center" alt="Starbucks" src="./HTML-CSS/gif/site.gif"> 
+  <img align="center" alt="Semantico" src="./HTML-CSS/gif/site.gif"> 
 </div>
 <div>-
   <h3 align="center">Projeto Starbucks</h3>
@@ -12,11 +12,15 @@ Repositório com exercícios e projetos do meu aprendizado cursando os cursos da
 </div>
 <div>
   <h3 align="center">Projeto Calculadora de IMC em Reactjs+TypeScript</h3>
-  <img align="center" alt="Starbucks" src="./Reactjs+TypeScript/Projeto/calculadora-imc/src/assets/gif/video.gif"> 
+  <img align="center" alt="IMC" src="./Reactjs+TypeScript/Projeto/calculadora-imc/src/assets/gif/video.gif"> 
 </div>
 <div>
   <h3 align="center">Projeto Album de fotos em Reactjs+TypeScript</h3>
-  <img align="center" alt="Starbucks" src="./Reactjs+TypeScript/Projeto/album-jsonPlaceholder/src/gif/video.gif"> 
+  <img align="center" alt="Fotos" src="./Reactjs+TypeScript/Projeto/album-jsonPlaceholder/src/gif/video.gif"> 
+</div>
+<div>
+  <h3 align="center">Projeto Todo-List em Reactjs+TypeScript</h3>
+  <img align="center" alt="todolist" src="./Reactjs+TypeScript/Projeto/todolist/gif/todolist.gif"> 
 </div>
 
 ## :rocket: Tecnologias
