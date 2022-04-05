@@ -22,6 +22,10 @@ Repositório com exercícios e projetos do meu aprendizado cursando os cursos da
   <h3 align="center">Projeto Todo-List em Reactjs+TypeScript</h3>
   <img align="center" alt="todolist" src="./Reactjs+TypeScript/Projeto/todolist/gif/todolist.gif"> 
 </div>
+<div>
+  <h3 align="center">Projeto Sistema Financeiro em Reactjs+TypeScript</h3>
+  <img align="center" alt="Sistema Financeiro" src="./Reactjs+TypeScript/Projeto/expensetrack/gif/video.gif"> 
+</div>
 
 ## :rocket: Tecnologias
 
@@ -34,6 +38,7 @@ Repositório com exercícios e projetos do meu aprendizado cursando os cursos da
 - ![image](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
   >
 - ![image](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+
   >
 
 ## Contato
