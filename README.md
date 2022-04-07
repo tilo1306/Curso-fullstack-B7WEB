@@ -26,6 +26,10 @@ Repositório com exercícios e projetos do meu aprendizado cursando os cursos da
   <h3 align="center">Projeto Sistema Financeiro em Reactjs+TypeScript</h3>
   <img align="center" alt="Sistema Financeiro" src="./Reactjs+TypeScript/Projeto/expensetrack/gif/video.gif"> 
 </div>
+<div>
+  <h3 align="center">Galeria de Fotos em Reactjs+TypeScript</h3>
+  <img align="center" alt="Sistema Financeiro" src="./Reactjs+TypeScript/Projeto/galerry/gif/galerry.gif"> 
+</div>
 
 ## :rocket: Tecnologias
 
@@ -38,7 +42,8 @@ Repositório com exercícios e projetos do meu aprendizado cursando os cursos da
 - ![image](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
   >
 - ![image](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-
+  >
+- ![image](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
   >
 
 ## Contato
