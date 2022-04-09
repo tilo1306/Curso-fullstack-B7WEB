@@ -2,14 +2,20 @@
 /* eslint-disable @typescript-eslint/no-for-in-array */
 /* eslint-disable guard-for-in */
 /* eslint-disable no-await-in-loop */
-import { ref, listAll, getDownloadURL, uploadBytes, deleteObject } from 'firebase/storage';
-import { v4 as createId } from 'uuid';
-import { Photo } from '../types/Photo';
-import { storage } from '../libs/firebase';
+import {
+  ref,
+  listAll,
+  getDownloadURL,
+  uploadBytes,
+  deleteObject,
+} from "firebase/storage";
+import { v4 as createId } from "uuid";
+import { Photo } from "../types/Photo";
+import { storage } from "../libs/firebase";
 
 export const getAll = async () => {
   const list: Photo[] = [];
-  const imagesFolder = ref(storage, 'Images');
+  const imagesFolder = ref(storage, "Images");
   const photoList = await listAll(imagesFolder);
 
   for (const i in photoList.items) {
@@ -23,7 +29,7 @@ export const getAll = async () => {
 };
 
 export const insert = async (file: File) => {
-  if (['image/jpeg', 'image/jpg', 'image/png'].includes(file.type)) {
+  if (["image/jpeg", "image/jpg", "image/png"].includes(file.type)) {
     const randomName = createId();
     const newfile = ref(storage, `Images/${randomName}`);
     const upload = await uploadBytes(newfile, file);
@@ -34,7 +40,7 @@ export const insert = async (file: File) => {
       url: photoUrl,
     } as Photo;
   }
-  return new Error('Tipo de arquivo não permitido.');
+  return new Error("Tipo de arquivo não permitido.");
 };
 
 export const deletePhoto = async (name: string) => {
