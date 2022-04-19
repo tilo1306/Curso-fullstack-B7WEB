@@ -19,6 +19,7 @@ export const Container = styled.div`
 
   label {
     font-size: 13px;
+
     input {
       display: block;
       margin-top: 7px;
@@ -33,14 +34,23 @@ export const Container = styled.div`
       background-color: #02044a;
     }
   }
+
   button {
     background-color: #25cd89;
     color: #fff;
     font-size: 14px;
+    font-weight: bold;
     padding: 20px 40px;
     border: 0;
     border-radius: 30px;
     cursor: pointer;
     margin-top: 30px;
+  }
+
+  .backButton {
+    font-size: 16px;
+    text-decoration: none;
+    padding: 20px 40px;
+    color: #b8b8d4;
   }
 `;
