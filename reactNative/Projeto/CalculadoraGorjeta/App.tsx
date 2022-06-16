@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Alert} from 'react-native';
 import styled from 'styled-components/native';
 
@@ -11,9 +11,14 @@ export default () => {
     if (nBill) {
       setTip(nBill * (pct / 100));
     } else {
-      Alert.alert('Digite o valor da conta!');
+      Alert.alert('Digite o valor da sua conta!');
     }
   };
+  useEffect(() => {
+    if (bill.length > 0) {
+      calc();
+    }
+  }, [pct]);
 
   return (
     <Page>
