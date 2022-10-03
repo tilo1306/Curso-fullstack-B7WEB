@@ -3,7 +3,7 @@ import {Text, View} from 'react-native';
 import {useAppSelector} from '../../hooks/hooksRedux';
 
 export const Test: React.FunctionComponent = () => {
-  const note = useAppSelector(state => state.note);
+  const note = useAppSelector(state => state.notes);
   return (
     <View>
       {note.list.map((p, index) => (

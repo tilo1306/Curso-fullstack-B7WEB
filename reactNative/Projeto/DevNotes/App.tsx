@@ -1,21 +1,18 @@
 import React from 'react';
-import {View} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
 import {Provider} from 'react-redux';
-import {Test} from './src/components/Test';
-import {store} from './src/redux/store';
+import {PersistGate} from 'redux-persist/integration/react';
+import {persistor, store} from './src/redux/store';
+import MainStack from './src/stacks/MainStack';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: 'red',
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-        <Test />
-      </View>
+      <PersistGate loading={null} persistor={persistor}>
+        <NavigationContainer>
+          <MainStack />
+        </NavigationContainer>
+      </PersistGate>
     </Provider>
   );
 };

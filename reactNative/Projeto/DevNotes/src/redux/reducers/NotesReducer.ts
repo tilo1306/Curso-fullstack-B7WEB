@@ -1,6 +1,6 @@
 import {AnyAction} from 'redux';
 
-interface CounterState {
+interface NoteState {
   list: Array<Note>;
 }
 interface Note {
@@ -8,14 +8,11 @@ interface Note {
   body: string;
 }
 
-const initialState: CounterState = {
+const initialState: NoteState = {
   list: [{title: 'Primeira Nota', body: 'Testando 1,2,3...'}],
 };
 
-export default function counterReducer(
-  state = initialState,
-  action: AnyAction,
-) {
+export default function noteReducer(state = initialState, action: AnyAction) {
   let newList = [...state.list];
   switch (action.type) {
     case 'ADD_NOTE':
@@ -33,7 +30,7 @@ export default function counterReducer(
       }
       break;
     case 'DEL_NOTE':
-      newList = newList.filter((item, index) => index != action.payload.key);
+      newList = newList.filter((item, index) => index !== action.payload.key);
       break;
   }
   return {...state, list: newList};
