@@ -7,6 +7,8 @@ import {
   SaveButtonImage,
   CloseButton,
   CloseButtonImage,
+  DeleteButton,
+  DeleteButtonText,
 } from './styles';
 import {useAppSelector, useAppDispatch} from '../../hooks/hooksRedux';
 import {useNavigation, useRoute} from '@react-navigation/native';
@@ -64,11 +66,13 @@ export const EditNoteScreen = () => {
             body,
           },
         });
+        navigation.goBack();
       } else {
         dispatch({
           type: 'ADD_NOTE',
           payload: {title, body},
         });
+        navigation.goBack();
       }
     } else {
       Alert.alert('Preencha Titulo e corpo!');
@@ -76,6 +80,15 @@ export const EditNoteScreen = () => {
   };
 
   const handleCloseButton = () => {
+    navigation.goBack();
+  };
+  const handleDelete = () => {
+    dispatch({
+      type: 'DEL_NOTE',
+      payload: {
+        key: route.params.key,
+      },
+    });
     navigation.goBack();
   };
 
@@ -96,6 +109,11 @@ export const EditNoteScreen = () => {
         multiline={true}
         textAlignVertical="top"
       />
+      {status === 'edit' && (
+        <DeleteButton underlayColor="#FF0000" onPress={handleDelete}>
+          <DeleteButtonText>Excluir Anotação</DeleteButtonText>
+        </DeleteButton>
+      )}
     </Container>
   );
 };
