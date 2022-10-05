@@ -1,7 +1,16 @@
 import React from 'react';
-import {Container, TitleInput, BodyInput} from './styles';
+import {
+  Container,
+  TitleInput,
+  BodyInput,
+  SaveButton,
+  SaveButtonImage,
+  CloseButton,
+  CloseButtonImage,
+} from './styles';
 import {useAppSelector, useAppDispatch} from '../../hooks/hooksRedux';
 import {useNavigation, useRoute} from '@react-navigation/native';
+import {Alert} from 'react-native';
 
 export const EditNoteScreen = () => {
   const [title, setTitle] = React.useState('');
@@ -27,6 +36,33 @@ export const EditNoteScreen = () => {
       setBody(list[route.params.key].body);
     }
   }, []);
+
+  React.useLayoutEffect(() => {
+    navigation.setOptions({
+      title: status === 'new' ? 'Nova Anotação' : 'Editar Anotação',
+      headerLeft: () => (
+        <CloseButton underlayColor="transparent" onPress={handleCloseButton}>
+          <CloseButtonImage source={require('../../assets/close.png')} />
+        </CloseButton>
+      ),
+      headerRight: () => (
+        <SaveButton underlayColor="transparent" onPress={handleSaveButton}>
+          <SaveButtonImage source={require('../../assets/save.png')} />
+        </SaveButton>
+      ),
+    });
+  }, [status, title, body]);
+
+  const handleSaveButton = () => {
+    if (title !== '' && body !== '') {
+    } else {
+      Alert.alert('Preencha Titulo e corpo!');
+    }
+  };
+
+  const handleCloseButton = () => {
+    navigation.goBack();
+  };
 
   return (
     <Container>
