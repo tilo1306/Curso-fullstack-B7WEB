@@ -1,9 +1,32 @@
 import React from 'react';
 import {Container, TitleInput, BodyInput} from './styles';
+import {useAppSelector, useAppDispatch} from '../../hooks/hooksRedux';
+import {useNavigation, useRoute} from '@react-navigation/native';
 
 export const EditNoteScreen = () => {
   const [title, setTitle] = React.useState('');
   const [body, setBody] = React.useState('');
+  const [status, setStatus] = React.useState('new');
+
+  interface Routes {
+    [key: string]: any | undefined;
+    key: string;
+    name: string;
+    path?: string | undefined;
+  }
+
+  const navigation = useNavigation();
+  const route = useRoute<Routes>();
+  const dispatch = useAppDispatch();
+  const list = useAppSelector(state => state.notes.list);
+
+  React.useEffect(() => {
+    if (route.params?.key !== undefined && list[route.params?.key]) {
+      setStatus('edit');
+      setTitle(list[route.params.key].title);
+      setBody(list[route.params.key].body);
+    }
+  }, []);
 
   return (
     <Container>
