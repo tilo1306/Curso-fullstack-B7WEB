@@ -27,5 +27,6 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/no-empty-function': 'off',
+    "react/jsx-no-useless-fragment": ["warn", { "allowExpressions":  true }],
   },
 };
