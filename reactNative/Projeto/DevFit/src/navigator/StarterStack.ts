@@ -1,6 +1,6 @@
 import {createStackNavigator} from 'react-navigation-stack';
 
-import {StarterIntro} from '../screens/StarterIntro';
+import {StarterIntro} from '../screens/starterIntro/StarterIntro';
 
 export default createStackNavigator({
   StarterIntro,
