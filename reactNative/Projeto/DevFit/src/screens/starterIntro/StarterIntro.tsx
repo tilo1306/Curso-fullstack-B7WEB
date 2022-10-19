@@ -41,3 +41,4 @@ const Page = (navigate: RouterProps) => {
 Page.navigationOptions = {
   headerShown: false,
 };
+export {Page};
