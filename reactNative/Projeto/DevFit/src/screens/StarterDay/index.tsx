@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import {Alert, Text} from 'react-native';
 import DefaultButton from '../../components/DefaultButton/DefaultButton';
 
-const Page = props => {
+const StarterDay = props => {
   const nextAction = () => {
     if (!props.name) {
       Alert.alert('Você precisa de um nome!');
@@ -13,19 +13,26 @@ const Page = props => {
     }
     props.navigation.navigate('StarterDias');
   };
-  const handleChangeName = t => {
-    props.setName(t);
-    props.navigation.setParams({name: t});
+
+  const toggleDay = (day: number) => {
+    let newWorkoutDays = [...props.workoutDays];
+    if (!props.workoutDays.includes(day)) {
+      newWorkoutDays.push(day);
+    } else {
+      newWorkoutDays = newWorkoutDays.filter(i => i !== day);
+    }
+    props.setWorkoutDays = [...props.workoutDays];
+    props.navigation.setParams({workoutDays: newWorkoutDays});
   };
   const firstName = props.name.split(' ')[0];
   const dayWeek = [
+    'domingo',
     'Segunda',
     'Terça',
     'Quarta',
     'Quinta',
     'Sexta',
     'sabado',
-    'domingo',
   ];
   return (
     <Container>
@@ -35,7 +42,15 @@ const Page = props => {
       </HeaderText>
       <DaysArea>
         {dayWeek.map((day, index) => (
-          <DefaultButton key={index} width={100} style={{marginBottom: 20}}>
+          <DefaultButton
+            onPress={() => toggleDay(index)}
+            bgcolor={
+              props.workoutDays.includes(index.toString()) ? '#A5EBBC' : false
+            }
+            key={index}
+            width={100}
+            style={{marginBottom: 20}}
+            underlayColor="#CCC">
             <Text>{day}</Text>
           </DefaultButton>
         ))}
@@ -44,13 +59,16 @@ const Page = props => {
   );
 };
 
-Page.navigationOptions = ({navigation}) => {
+StarterDay.navigationOptions = ({navigation}) => {
   const nextAction = () => {
-    if (!navigation.state.params || !navigation.state.params.name) {
-      Alert.alert('Você precisa de um nome!');
+    if (
+      !navigation.state.params ||
+      !navigation.state.params.workoutDays.length
+    ) {
+      Alert.alert('Você precisa treinar pelo menos 1 dia!');
       return;
     }
-    navigation.navigate('StarterDias');
+    navigation.navigate('StarterNivel');
   };
   return {
     title: '',
@@ -64,11 +82,14 @@ Page.navigationOptions = ({navigation}) => {
 const mapStateToProps = state => {
   return {
     name: state.userReducer.name,
+    workoutDays: state.userReducer.workoutDays,
   };
 };
 const mapDispatchToProps = dispatch => {
   return {
     setName: name => dispatch({type: 'SET_NAME', payload: {name}}),
+    setWorkoutDays: workoutDays =>
+      dispatch({type: 'SET_WORKOUTDAYS', payload: {workoutDays}}),
   };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Page);
+export default connect(mapStateToProps, mapDispatchToProps)(StarterDay);

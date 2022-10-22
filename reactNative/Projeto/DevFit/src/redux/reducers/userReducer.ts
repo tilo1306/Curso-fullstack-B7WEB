@@ -23,6 +23,9 @@ export default (state = initialState, action: AnyAction) => {
     case 'SET_NAME':
       return {...state, name: action.payload.name};
       break;
+    case 'SET_WORKOUTDAYS':
+      return {...state, workoutDays: action.payload.workoutDays};
+      break;
   }
   return state;
 };
