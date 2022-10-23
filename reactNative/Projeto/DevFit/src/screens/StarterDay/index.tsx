@@ -6,14 +6,6 @@ import {Alert, Text} from 'react-native';
 import DefaultButton from '../../components/DefaultButton/DefaultButton';
 
 const StarterDay = props => {
-  const nextAction = () => {
-    if (!props.name) {
-      Alert.alert('Você precisa de um nome!');
-      return;
-    }
-    props.navigation.navigate('StarterDias');
-  };
-
   const toggleDay = (day: number) => {
     let newWorkoutDays = [...props.workoutDays];
     if (!props.workoutDays.includes(day)) {
@@ -24,7 +16,9 @@ const StarterDay = props => {
     props.setWorkoutDays = [...props.workoutDays];
     props.navigation.setParams({workoutDays: newWorkoutDays});
   };
+
   const firstName = props.name.split(' ')[0];
+
   const dayWeek = [
     'domingo',
     'Segunda',
@@ -34,6 +28,7 @@ const StarterDay = props => {
     'Sexta',
     'sabado',
   ];
+
   return (
     <Container>
       <HeaderText>Opa, {firstName}, tudobem ?</HeaderText>
