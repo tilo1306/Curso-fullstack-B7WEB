@@ -3,6 +3,13 @@ import {Container, HeaderText, NextButton, WorkoutList} from './styled';
 import {connect} from 'react-redux';
 import {Alert, Text} from 'react-native';
 import workoutJson from '../../presetWorkouts.json';
+import {Workout} from '../../components/Workout';
+
+interface IPresetWorkouts {
+  id: string;
+  name: string;
+  exercises: [];
+}
 
 const StarterRecommendations = props => {
   React.useEffect(() => {
@@ -15,8 +22,8 @@ const StarterRecommendations = props => {
       </HeaderText>
       <HeaderText>Você selecionou {props.myWorkouts.length} treino</HeaderText>
       <WorkoutList
-        data={workoutJson}
-        renderItem={({item}) => <Text>{item}</Text>}
+        data={workoutJson as IPresetWorkouts[]}
+        renderItem={({item}) => <Workout data={item} />}
         keyExtractor={item => item.id}
       />
     </Container>
