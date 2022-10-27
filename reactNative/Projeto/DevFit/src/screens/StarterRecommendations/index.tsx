@@ -11,59 +11,83 @@ interface IPresetWorkouts {
   exercises: [];
 }
 
+const NextButton = props => {
+  let btnTitle = 'Ignorar';
+  if (
+    props.navigation.state.params &&
+    props.navigation.state.params.hasWorkout
+  ) {
+    btnTitle = 'Concluir';
+  }
+
+  const nextAction = () => {
+    props.navigation.dispatch(
+      StackActions.reset({
+        index: 0,
+        actions: [NavigationActions.navigate({routeName: 'AppTab'})]
+      }),
+    );
+  };;
+
+  return <Button title={btnTitle} onPress={nextAction} />;
+};;
+
 const StarterRecommendations = props => {
-  React.useEffect(() => {
-    props.navigation.setParams({myWorkouts: props.myWorkouts});
+  const addWorkout = item => {
+    if (props.myWorkouts.findIndex(i => i.id == item.id) < 0) {
+      props.addWorkout(item);
+    } else {
+      props.delWorkout(item);
+    }
+  };;
+
+  useEffect(() => {
+    if  (props.myWorkouts.length > 0) {
+      props.navigation.setParams({hasWorkout: true});
+    } else {
+      props.navigation.setParams({hasWorkout: false});
+    }
   }, [props.myWorkouts]);
+
   return (
     <Container>
       <HeaderText>
-        Opções de treino pré-criados com base no seu nivel.
+        Opções de treino pré-criados com base no seu nível.
       </HeaderText>
-      <HeaderText>Você selecionou {props.myWorkouts.length} treino</HeaderText>
+      <HeaderText>Você selecionou {props.myWorkouts.length} treinos</HeaderText>
       <WorkoutList
-        data={workoutJson as IPresetWorkouts[]}
-        renderItem={({item}) => <Workout data={item} />}
+        data={workoutJson}
+        renderItem={({item}) => (
+          <Workout data={item} addAction={() => addWorkout(item)} />
+        )}
         keyExtractor={item => item.id}
       />
     </Container>
   );
 };
 
-StarterRecommendations.navigationOptions = ({navigation}) => {
-  let btnNext = 'Ignorar';
-
-  if (navigation.state.params && navigation.state.params.myWorkouts.length) {
-    btnNext = 'Concluir';
-  }
-
-  const nextAction = () => {
-    if (!navigation.state.params || !navigation.state.params.level) {
-      Alert.alert('Você precisa escolher uma opção!');
-      return;
-    }
-    navigation.navigate('StarterRecommendations');
-  };
+Page.navigationOptions = ({navigation}) => {
   return {
     title: '',
-    headerRight: <NextButton title={btnNext} onPress={nextAction} />,
+    headerRight: <NextButton navigation={navigation} />,
     headerRightContainerStyle: {
-      marginRight: 10,
-    },
+      marginRight: 10,,
+    },,
   };
 };
 
 const mapStateToProps = state => {
   return {
-    myWorkouts: state.userReducer.myWorkouts,
+    level: state.userReducer.level,
+    myWorkouts: state.userReducer.myWorkouts,,
   };
 };
+
 const mapDispatchToProps = dispatch => {
   return {
-    setLevel: level => dispatch({type: 'SET_LEVEL', payload: {level}}),
+    addWorkout: workout => addWorkout(workout, dispatch),
+    delWorkout: workout => delWorkout(workout, dispatch),,
   };
 };
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(StarterRecommendations);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Page);

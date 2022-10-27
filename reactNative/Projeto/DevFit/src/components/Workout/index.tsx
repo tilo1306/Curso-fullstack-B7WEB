@@ -13,12 +13,19 @@ import {
 } from './styled';
 
 export const Workout = props => {
+  const [included, setIncluded] = React.useState(false);
   const muscleGroups = [];
   for (const key in props.data.exercises) {
     if (!muscleGroups.includes(props.data.exercises[key].muscle)) {
       muscleGroups.push(props.data.exercises[key].muscle);
     }
   }
+
+  const addWorkout = () => {
+    props.addAction();
+    setIncluded(!included);
+  };
+
   return (
     <Container>
       <WorkoutInfo>
@@ -32,8 +39,14 @@ export const Workout = props => {
         </MuscleScroll>
       </WorkoutInfo>
       <WorkoutActions>
-        <WorkoutButton>
-          <WorkoutButtonImage source={require('../../assets/add.png')} />
+        <WorkoutButton onPress={() => addWorkout()} underlayColor="transparent">
+          <WorkoutButtonImage
+            source={
+              included
+                ? require('../assets/check-black.png')
+                : require('../../assets/add.png')
+            }
+          />
         </WorkoutButton>
       </WorkoutActions>
     </Container>
